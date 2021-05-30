@@ -1,0 +1,1453 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Документация разработчика &#8212; документация TrueLink v0.6</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Документация пользователя" href="overview.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1><strong>Документация разработчика</strong><a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<section id="module-main.models">
+<span id="id2"></span><h2>Модели:<a class="headerlink" href="#module-main.models" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Django models inherited from models.Model</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.Friend">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">Friend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Friend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores user’s friends.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>users</strong> – User objects, other users</p></li>
+<li><p><strong>current_user</strong> – User object, request user</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Friend.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.Friend.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Friend.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.Friend.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.Friend.make_friend">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">make_friend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">django.contrib.auth.models.User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_friend</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">django.contrib.auth.models.User</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Friend.make_friend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds Friend to User friends.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.Friend.remove_friend">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">remove_friend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">django.contrib.auth.models.User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_friend</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">django.contrib.auth.models.User</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Friend.remove_friend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Removes Friend from User friends.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.GalleryImage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">GalleryImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.GalleryImage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores users images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> – User object, the one who owns image</p></li>
+<li><p><strong>link_to_img</strong> – str, link to img in media</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.GalleryImage.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.GalleryImage.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.GalleryImage.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.GalleryImage.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.Group">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">Group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – str, group’s name</p></li>
+<li><p><strong>creator</strong> – User object, the one who owns group</p></li>
+<li><p><strong>members</strong> – str, ids of group members</p></li>
+<li><p><strong>invitations</strong> – str, ids of members, that dropped a request to join group</p></li>
+<li><p><strong>bans</strong> – str, ids of banned users</p></li>
+<li><p><strong>admins</strong> – str, ids of group admins</p></li>
+<li><p><strong>link_to_img</strong> – str, link to img in media</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+<li><p><strong>visible</strong> – bool, defines group’s posts visibility to users that are not members</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Group.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.Group.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Group.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.Group.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.GroupPost">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">GroupPost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.GroupPost" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores groups posts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group</strong> – Group object, post’s group</p></li>
+<li><p><strong>user</strong> – User object, the one who created post</p></li>
+<li><p><strong>text</strong> – str, post’s text</p></li>
+<li><p><strong>likes</strong> – int, post’s likes</p></li>
+<li><p><strong>liked_by</strong> – str, ids of user’s that liked the post</p></li>
+<li><p><strong>link_to_img</strong> – str, link to img in media</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.GroupPost.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.GroupPost.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.GroupPost.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.GroupPost.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.Message">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores user’s private messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sender</strong> – User object, the one who send message</p></li>
+<li><p><strong>receiver</strong> – User object, the one who get message</p></li>
+<li><p><strong>users</strong> – str, sender and receiver ids (e.g. „1 2“)</p></li>
+<li><p><strong>message</strong> – str, message</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Message.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.Message.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Message.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.Message.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.Profile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Profile" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores user’s profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> – User object, profile owner</p></li>
+<li><p><strong>pfp_link</strong> – str, link to profile picture in media</p></li>
+<li><p><strong>groups</strong> – str, ids of groups user is member of</p></li>
+<li><p><strong>groups_inv</strong> – str, ids of groups user sent invite to</p></li>
+<li><p><strong>servers</strong> – str, ids of servers user is member of</p></li>
+<li><p><strong>servers_inv</strong> – str, ids of servers user sent invite to</p></li>
+<li><p><strong>black_list</strong> – str, id“ of users blocked by user</p></li>
+<li><p><strong>posts_liked</strong> – str, id“ of user posts liked by user</p></li>
+<li><p><strong>group_posts_liked</strong> – str, id“ of group posts liked by user</p></li>
+<li><p><strong>age</strong> – int, user’s age</p></li>
+<li><p><strong>friends_visible</strong> – bool, defines user’s friends visibility to other users</p></li>
+<li><p><strong>groups_visible</strong> – bool, defines user’s groups visibility to other users</p></li>
+<li><p><strong>last_name_visible</strong> – bool, defines user’s last_name visibility to other users</p></li>
+<li><p><strong>age_visible</strong> – bool, defines user’s age visibility to other users</p></li>
+<li><p><strong>gallery_visible</strong> – bool, defines user’s gallery visibility to other users</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Profile.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.Profile.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Profile.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.Profile.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.Server">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.Server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores servers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – str, server’s name</p></li>
+<li><p><strong>members</strong> – str, ids of server members</p></li>
+<li><p><strong>invitations</strong> – str, ids of members, that dropped a request to join server</p></li>
+<li><p><strong>bans</strong> – str, ids of banned users</p></li>
+<li><p><strong>creator</strong> – User object, the one who owns server</p></li>
+<li><p><strong>admins</strong> – str, ids of server admins</p></li>
+<li><p><strong>chats</strong> – str, ids of server chats</p></li>
+<li><p><strong>link_to_img</strong> – str, link to img in media</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+<li><p><strong>closed</strong> – bool, defines if users need to send request for joining</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Server.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.Server.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.Server.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.Server.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.ServerChat">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">ServerChat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.ServerChat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores servers chats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – str, chats’s name</p></li>
+<li><p><strong>server</strong> – Server object, chat’s server</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.ServerChat.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.ServerChat.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.ServerChat.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.ServerChat.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.ServerMessage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">ServerMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.ServerMessage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores servers messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> – Server object, message’s server</p></li>
+<li><p><strong>chat</strong> – ServerChat object, message’s chat</p></li>
+<li><p><strong>message</strong> – str, text</p></li>
+<li><p><strong>sender</strong> – User object, the one, who sent message</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.ServerMessage.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.ServerMessage.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.ServerMessage.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.ServerMessage.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.UserPost">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">UserPost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.UserPost" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Stores user’s posts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> – User object, the one who owns post</p></li>
+<li><p><strong>datetime</strong> – „datetime.datetime()“, date of creating</p></li>
+<li><p><strong>link_to_img</strong> – str, link to img in media</p></li>
+<li><p><strong>likes</strong> – int, amount of likes</p></li>
+<li><p><strong>liked_by</strong> – str, line of user’s that liked the post</p></li>
+<li><p><strong>text</strong> – str, post’s text</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.UserPost.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.UserPost.DoesNotExist" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.UserPost.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.UserPost.MultipleObjectsReturned" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main.views.functions">
+<span id="id3"></span><h2>Общие функции:<a class="headerlink" href="#module-main.views.functions" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Functions and imports.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.functions.add_number_to_string_list">
+<span class="sig-prename descclassname"><span class="pre">main.views.functions.</span></span><span class="sig-name descname"><span class="pre">add_number_to_string_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_to_add</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#main.views.functions.add_number_to_string_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds integer to a string of numbers divided by space. Returns new string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.functions.list_friends">
+<span class="sig-prename descclassname"><span class="pre">main.views.functions.</span></span><span class="sig-name descname"><span class="pre">list_friends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><a class="headerlink" href="#main.views.functions.list_friends" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns a list of Friend objects.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.functions.remove_number_from_string_list">
+<span class="sig-prename descclassname"><span class="pre">main.views.functions.</span></span><span class="sig-name descname"><span class="pre">remove_number_from_string_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_to_add</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#main.views.functions.remove_number_from_string_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Removes integer from string of numbers divided by space. Returns new string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.functions.set_context">
+<span class="sig-prename descclassname"><span class="pre">main.views.functions.</span></span><span class="sig-name descname"><span class="pre">set_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><a class="headerlink" href="#main.views.functions.set_context" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Defines basic page context.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.chats_views">
+<span id="id4"></span><h2>Функции чата:<a class="headerlink" href="#module-main.views.chats_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Messager views.</p>
+<p>Functions and pages related to site’s messager.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.add_message_to_db">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">add_message_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_with</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.chats_views.add_message_to_db" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Handles post request and creates new Message object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.black_list">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">black_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.chats_views.black_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to request user’s black list by id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.black_list_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">black_list_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.chats_views.black_list_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Black list page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.delete_message">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">delete_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.chats_views.delete_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes Message object from data base by id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.delete_message_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">delete_message_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.chats_views.delete_message_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete message page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.get_messages">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">get_messages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.chats_views.get_messages" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Retrieve last message from database and returns it in HttpResponse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.chats_views.messager_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.chats_views.</span></span><span class="sig-name descname"><span class="pre">messager_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.chats_views.messager_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Messager page view.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.error_views">
+<span id="id5"></span><h2>Функции страниц ошибок:<a class="headerlink" href="#module-main.views.error_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Error views.</p>
+<p>Functions and pages related to errors.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.error_views.error_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.error_views.</span></span><span class="sig-name descname"><span class="pre">error_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.error_views.error_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Error page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.error_views.page_403">
+<span class="sig-prename descclassname"><span class="pre">main.views.error_views.</span></span><span class="sig-name descname"><span class="pre">page_403</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Exception</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.error_views.page_403" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Page 403 view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.error_views.page_404">
+<span class="sig-prename descclassname"><span class="pre">main.views.error_views.</span></span><span class="sig-name descname"><span class="pre">page_404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Exception</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.error_views.page_404" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Page 404 view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.error_views.page_500">
+<span class="sig-prename descclassname"><span class="pre">main.views.error_views.</span></span><span class="sig-name descname"><span class="pre">page_500</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.error_views.page_500" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Page 500 view.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.group_views">
+<span id="id6"></span><h2>Функции групп:<a class="headerlink" href="#module-main.views.group_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Group views.</p>
+<p>Functions and pages related to site’s groups.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.create_new_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">create_new_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.create_new_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Handles request post and creates new Group object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.delete_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">delete_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.delete_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes Group object from database by id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.delete_group_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">delete_group_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.delete_group_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete group page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.delete_group_post">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">delete_group_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.delete_group_post" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes GroupPost object from database by id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.delete_group_post_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">delete_group_post_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.delete_group_post_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete group post page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.feed_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">feed_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.feed_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Feed page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.follow_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">follow_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.follow_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds request user to group’s members list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_ban">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_ban</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.group_ban" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to group’s bans list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_ban_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_ban_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.group_ban_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group ban page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_kick_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_kick_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.group_kick_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group kick page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_make_admin">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_make_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.group_make_admin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to group’s admins list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_make_admin_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_make_admin_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.group_make_admin_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group page that makes user an admin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.group_solo_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">group_solo_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.group_solo_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group paeg view</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.heart_group_post">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">heart_group_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.heart_group_post" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Toggles like on group post by id.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.leave_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">leave_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.group_views.leave_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Removes user from group’s members list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.members_group_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">members_group_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.members_group_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group’s members page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.settings_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">settings_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.settings_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group’s settings page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.group_views.unfollow_group">
+<span class="sig-prename descclassname"><span class="pre">main.views.group_views.</span></span><span class="sig-name descname"><span class="pre">unfollow_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.group_views.unfollow_group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Removes request user from group’s members list.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.landing_views">
+<span id="id7"></span><h2>Функции лэндинга:<a class="headerlink" href="#module-main.views.landing_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Landing page views.</p>
+<p>Functions and pages related to site’s landing stage.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.landing_views.forgot_password_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.landing_views.</span></span><span class="sig-name descname"><span class="pre">forgot_password_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.landing_views.forgot_password_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Forgot password page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.landing_views.landing_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.landing_views.</span></span><span class="sig-name descname"><span class="pre">landing_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.landing_views.landing_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Page view. First page that user see’s when he visits site for the first time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.landing_views.logout_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.landing_views.</span></span><span class="sig-name descname"><span class="pre">logout_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.landing_views.logout_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Logout request user</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.search_views">
+<span id="id8"></span><h2>Функции поисковика:<a class="headerlink" href="#module-main.views.search_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Search page views.</p>
+<p>Functions and pages related to site’s searching system.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.search_views.more_groups">
+<span class="sig-prename descclassname"><span class="pre">main.views.search_views.</span></span><span class="sig-name descname"><span class="pre">more_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.search_views.more_groups" title="Ссылка на это определение">¶</a></dt>
+<dd><p>More groups page view. All search results for groups.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.search_views.more_people">
+<span class="sig-prename descclassname"><span class="pre">main.views.search_views.</span></span><span class="sig-name descname"><span class="pre">more_people</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.search_views.more_people" title="Ссылка на это определение">¶</a></dt>
+<dd><p>More users page view. All search results for users.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.search_views.more_servers">
+<span class="sig-prename descclassname"><span class="pre">main.views.search_views.</span></span><span class="sig-name descname"><span class="pre">more_servers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.search_views.more_servers" title="Ссылка на это определение">¶</a></dt>
+<dd><p>More servers page view. All search results for servers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.search_views.search">
+<span class="sig-prename descclassname"><span class="pre">main.views.search_views.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.search_views.search" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Search page view.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.server_views">
+<span id="id9"></span><h2>Функции серверов:<a class="headerlink" href="#module-main.views.server_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Server page views.</p>
+<p>Functions and pages related to site’s servers.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.create_new_server">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">create_new_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.create_new_server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create new server page view. Creates Server object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.delete_server">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">delete_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.delete_server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes Server object from database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.delete_server_message">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">delete_server_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.delete_server_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes ServerMessage object from database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.delete_server_message_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">delete_server_message_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.delete_server_message_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete server message page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.delete_server_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">delete_server_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.delete_server_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete server page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.get_server_messages">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">get_server_messages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.get_server_messages" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns last message from database as a JsonReponse</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.invite_server_handler_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">invite_server_handler_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.invite_server_handler_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to server’s members list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.invite_server_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">invite_server_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.invite_server_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server invite page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.leave_server">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">leave_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.leave_server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Removes user from server’s members list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.leave_server_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">leave_server_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.leave_server_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Leave server page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.members_server_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">members_server_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.members_server_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server members page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_ban">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_ban</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.server_ban" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to server’s bans list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_ban_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_ban_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.server_ban_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server ban page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_kick_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_kick_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.server_kick_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server kick page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_make_admin">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_make_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.server_views.server_make_admin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Adds user to server’s admins list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_make_admin_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_make_admin_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.server_make_admin_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server page that makes user an admin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.server_solo_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">server_solo_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.server_solo_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.server_views.settings_server">
+<span class="sig-prename descclassname"><span class="pre">main.views.server_views.</span></span><span class="sig-name descname"><span class="pre">settings_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.server_views.settings_server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server settings page view.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.views.user_views">
+<span id="id10"></span><h2>Функции юзера:<a class="headerlink" href="#module-main.views.user_views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>User page views.</p>
+<p>Functions and pages related to site’s user.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.change_info">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">change_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_on_page</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">django.contrib.auth.models.User</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.change_info" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Handles request and changes user info.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.delete_image">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">delete_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.user_views.delete_image" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes GalleryImage objects from database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.delete_image_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">delete_image_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.delete_image_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete gallery image page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.delete_post_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">delete_post_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.delete_post_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Delete post page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.delete_users_post">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">delete_users_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.user_views.delete_users_post" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deletes UserProfilePost object from database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.friends_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">friends_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.friends_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User’s friends page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.gallery_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">gallery_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.gallery_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Gallery page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.groups_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">groups_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.groups_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User’s groups page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.heart_post">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">heart_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.user_views.heart_post" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Toggles like for user post.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.private_settings_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">private_settings_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.private_settings_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Private settings page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.profile_settings_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">profile_settings_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.profile_settings_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Profile settings page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.servers_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">servers_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.servers_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User’s servers page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.user_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">user_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.user_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.users_add_friend_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">users_add_friend_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.users_add_friend_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Add friend page view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.user_views.users_remove_friend_page">
+<span class="sig-prename descclassname"><span class="pre">main.views.user_views.</span></span><span class="sig-name descname"><span class="pre">users_remove_friend_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">django.http.response.HttpResponse</span><a class="headerlink" href="#main.views.user_views.users_remove_friend_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Remove friend page view.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.forms">
+<span id="id11"></span><h2>Формы:<a class="headerlink" href="#module-main.forms" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Django Forms inherited from forms.Form</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.AuthUserForm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">AuthUserForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data=None</span></em>, <em class="sig-param"><span class="pre">files=None</span></em>, <em class="sig-param"><span class="pre">auto_id='id_%s'</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em>, <em class="sig-param"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></em>, <em class="sig-param"><span class="pre">label_suffix=None</span></em>, <em class="sig-param"><span class="pre">empty_permitted=False</span></em>, <em class="sig-param"><span class="pre">field_order=None</span></em>, <em class="sig-param"><span class="pre">use_required_attribute=None</span></em>, <em class="sig-param"><span class="pre">renderer=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.AuthUserForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Form for login on landing page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – user’s username, have a regular expression</p></li>
+<li><p><strong>password</strong> – user’s password, have a regular expression</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.RegisterUserForm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">RegisterUserForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data=None</span></em>, <em class="sig-param"><span class="pre">files=None</span></em>, <em class="sig-param"><span class="pre">auto_id='id_%s'</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em>, <em class="sig-param"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></em>, <em class="sig-param"><span class="pre">label_suffix=None</span></em>, <em class="sig-param"><span class="pre">empty_permitted=False</span></em>, <em class="sig-param"><span class="pre">field_order=None</span></em>, <em class="sig-param"><span class="pre">use_required_attribute=None</span></em>, <em class="sig-param"><span class="pre">renderer=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.RegisterUserForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Form for registration an account on landing page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – user’s username, have a regular expression</p></li>
+<li><p><strong>first_name</strong> – user’s first name, have a regular expression</p></li>
+<li><p><strong>last_name</strong> – user’s last name, have a regular expression</p></li>
+<li><p><strong>email</strong> – user’s email, have a regular expression</p></li>
+<li><p><strong>password</strong> – user’s password, have a regular expression</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-main.tests">
+<span id="id12"></span><h2>Тесты:<a class="headerlink" href="#module-main.tests" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Django Tests inherited from TestCase</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.FriendsTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">FriendsTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.FriendsTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User friends page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.FriendsTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.FriendsTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.FriendsTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.FriendsTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.FriendsTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.FriendsTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.FriendsTestCase.test_user_on_page">
+<span class="sig-name descname"><span class="pre">test_user_on_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.FriendsTestCase.test_user_on_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user_on_page field in context equals to current user by user_id in url</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.GalleryTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">GalleryTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GalleryTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>gallery page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GalleryTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.GalleryTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GalleryTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GalleryTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GalleryTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GalleryTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GalleryTestCase.test_user_on_page">
+<span class="sig-name descname"><span class="pre">test_user_on_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GalleryTestCase.test_user_on_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user_on_page field in context equals to current user by user_id in url</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.GroupMembersTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">GroupMembersTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupMembersTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group members page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupMembersTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.GroupMembersTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupMembersTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupMembersTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupMembersTestCase.test_members">
+<span class="sig-name descname"><span class="pre">test_members</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupMembersTestCase.test_members" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that there is at least one user in members</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupMembersTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupMembersTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.GroupTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">GroupTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Group page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.GroupTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.GroupsTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">GroupsTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupsTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User groups page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupsTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.GroupsTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupsTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupsTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupsTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupsTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.GroupsTestCase.test_user_on_page">
+<span class="sig-name descname"><span class="pre">test_user_on_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.GroupsTestCase.test_user_on_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user_on_page field in context equals to current user by user_id in url</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.NewGroupTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">NewGroupTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewGroupTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create new group page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewGroupTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.NewGroupTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewGroupTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewGroupTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewGroupTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewGroupTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.NewServerTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">NewServerTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewServerTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create new server page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewServerTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.NewServerTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewServerTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewServerTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.NewServerTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.NewServerTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">PrivateSettingsTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User private settings page test</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_age_visibility">
+<span class="sig-name descname"><span class="pre">test_age_visibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_age_visibility" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that age_visibility field is not None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_friends_visibility">
+<span class="sig-name descname"><span class="pre">test_friends_visibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_friends_visibility" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that friends_visibility field is not None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_groups_visibility">
+<span class="sig-name descname"><span class="pre">test_groups_visibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_groups_visibility" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that groups_visibility field is not None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_last_name_visibility">
+<span class="sig-name descname"><span class="pre">test_last_name_visibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_last_name_visibility" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that last_name_visibility field is not None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.PrivateSettingsTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.PrivateSettingsTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.ProfileSettingsTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">ProfileSettingsTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ProfileSettingsTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User profile settings page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ProfileSettingsTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.ProfileSettingsTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ProfileSettingsTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ProfileSettingsTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ProfileSettingsTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ProfileSettingsTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.SearchTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">SearchTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.SearchTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Search page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.SearchTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.SearchTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.SearchTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.SearchTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.SearchTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.SearchTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.ServerMembersTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">ServerMembersTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerMembersTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server members page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerMembersTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.ServerMembersTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerMembersTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerMembersTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerMembersTestCase.test_members">
+<span class="sig-name descname"><span class="pre">test_members</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerMembersTestCase.test_members" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that there is at least one user in members</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerMembersTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerMembersTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.ServerTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">ServerTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Server page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.ServerTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServerTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServerTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.ServersTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">ServersTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServersTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User servers page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServersTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.ServersTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServersTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServersTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.ServersTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.ServersTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.tests.UserTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.tests.</span></span><span class="sig-name descname"><span class="pre">UserTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.UserTestCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>User page tests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>fixtures</strong> – <ul class="simple">
+<li><p>project’s fixtures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.UserTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#main.tests.UserTestCase.setUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Class set up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.UserTestCase.test_context_user_is_user">
+<span class="sig-name descname"><span class="pre">test_context_user_is_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.UserTestCase.test_context_user_is_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user field in context equals to current User object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.UserTestCase.test_posts_len">
+<span class="sig-name descname"><span class="pre">test_posts_len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.UserTestCase.test_posts_len" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests amount of posts on user’s page</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.UserTestCase.test_response">
+<span class="sig-name descname"><span class="pre">test_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.UserTestCase.test_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests response’s status code</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.tests.UserTestCase.test_user_on_page">
+<span class="sig-name descname"><span class="pre">test_user_on_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.tests.UserTestCase.test_user_on_page" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Tests that user_on_page field in context equals to current user by user_id in url</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TrueLink</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html"><strong>Документация пользователя</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Документация разработчика</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.models">Модели:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.functions">Общие функции:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.chats_views">Функции чата:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.error_views">Функции страниц ошибок:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.group_views">Функции групп:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.landing_views">Функции лэндинга:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.search_views">Функции поисковика:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.server_views">Функции серверов:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.views.user_views">Функции юзера:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.forms">Формы:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main.tests">Тесты:</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="overview.html" title="предыдущая глава"><strong>Документация пользователя</strong></a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Daniil Naumov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/code.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
